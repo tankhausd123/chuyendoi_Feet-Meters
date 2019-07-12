@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chuyen_doi_feet&meter</title>
+</head>
+<body>
+<select id="select">
+    <option value="m-->f">m-->f</option>
+    <option value="f-->m">f-->m</option>
+</select>
+<input type="number" id="numInput" placeholder="nhập giá trị: " oninput="chuyenDoi()" onchange="chuyenDoi()" />
+<p><span id="display"></span> </p>
+<script>
+    function mf(met) {
+        let result = 3.279 * met;
+        return result;
+    }
+    function fm(feet) {
+        let result = 0.305 * feet;
+        return result;
+    }
+    function chuyenDoi() {
+        let select = document.getElementById('select').value;
+        let num = parseInt(document.getElementById('numInput').value);
+        console.log(num);
+        if (select == 'm-->f') {
+            document.getElementById('display').innerHTML = mf(num);
+        } else {
+            document.getElementById('display').innerHTML = fm(num);
+        }
+    }
+</script>
+</body>
+</html>
